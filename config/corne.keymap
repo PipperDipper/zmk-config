@@ -35,6 +35,17 @@
             hold-trigger-on-release;
             hold-trigger-key-positions = <36 37 38 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
         };
+
+        ht: hold_tap {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOLD_TAP";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <0>;
+            flavor = "tap-preferred";
+        };
     };
 
     macros {
@@ -109,65 +120,32 @@
 
         default_layer_mac {
             bindings = <
-&kp TAB    &kp Q                &kp W            &kp F            &kp P  &kp B        &kp J    &kp L  &kp U            &kp Y             &kp SEMI              &kp DEL
-&kp BSPC   &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_WIN S  &kp T  &kp G        &kp K    &kp N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
-&kp LSHFT  &kp Z                &kp X            &kp C            &kp D  &kp V        &kp M    &kp H  &kp COMMA        &kp DOT           &kp FSLH              &kp RET
+&kp TAB    &kp Q                &kp W            &kp F            &kp P  &kp B        &kp J    &kp L  &kp U            &kp Y               &kp SEMI              &kp DEL
+&kp BSPC   &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &kp T  &kp G        &kp K    &kp N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I    &HMR RIGHT_CONTROL O  &kp SQT
+&kp LSHFT  &kp Z                &kp X            &kp C            &kp D  &kp V        &kp M    &kp H  &kp COMMA        &kp DOT             &kp FSLH              &kp RET
                                                  &kp LGUI         &mo 4  &kp SPACE    &kp RET  &mo 3  &kp RALT
             >;
         };
 
         default_layer_win {
             bindings = <
-&kp TAB    &kp Q            &kp W            &kp F                &kp P  &kp B        &kp J    &kp L  &kp U                 &kp Y             &kp SEMI         &kp DEL
-&kp BSPC   &HML LEFT_WIN A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &kp T  &kp G        &kp K    &kp N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &kp SQT
-&kp LSHFT  &kp Z            &kp X            &kp C                &kp D  &kp V        &kp M    &kp H  &kp COMMA             &kp DOT           &kp FSLH         &kp RET
+&kp TAB    &kp Q            &kp W            &kp F                &kp P  &kp B        &kp J    &kp L  &kp U                 &kp Y               &kp SEMI          &kp DEL
+&kp BSPC   &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &kp T  &kp G        &kp K    &kp N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I    &HMR LEFT_GUI O   &kp SQT
+&kp LSHFT  &kp Z            &kp X            &kp C                &kp D  &kp V        &kp M    &kp H  &kp COMMA             &kp DOT             &kp FSLH          &kp RET
                                              &kp LCTRL            &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
             >;
         };
 
         nav_layer {
             bindings = <
-&kp KP_STAR   &kp MINUS  &mt AMPS N7  &mt ASTRK N8  &mt LPAR N9   &kp PLUS     &kp HOME              &select_word_previous  &select_all_left   &select_all_right  &select_word_next  &kp END
-&kp KP_SLASH  &kp BSPC   &mt DLLR N4  &mt PRCNT N5  &mt CARET N6  &kp RET      &kp LS(LC(LA(LGUI)))  &kp LEFT               &kp DOWN           &kp UP             &kp RIGHT          &new_line
-&kp BSLH      &kp N0     &mt EXCL N1  &mt AT N2     &mt HASH N3   &kp DOT      &kp LA(LS(MINUS))     &kp LS(LC(TAB))        &kp PG_DN          &kp PG_UP          &kp LC(TAB)        &insert_new_line
-                                      &kp TILDE     &kp SPACE     &kp LSHFT    &kp SPACE             &kp LG(LS(LEFT))       &kp LS(LG(RIGHT))
+&kp KP_MULTIPLY  &kp MINUS  &ht AMPS N7  &ht ASTRK N8  &ht LPAR N9  &kp PLUS     &kp HOME              &select_word_previous  &select_all_left   &select_all_right  &select_word_next  &kp END
+&kp KP_DIVIDE    &kp BSPC   &ht DLLR N4  &ht PRCNT N5  &ht CARET N6 &kp RET      &kp LS(LC(LA(LGUI)))  &kp LEFT               &kp DOWN           &kp UP             &kp RIGHT          &new_line
+&kp BSLH         &kp N0     &ht EXCL N1  &ht AT N2     &ht HASH N3  &kp DOT      &kp LA(LS(MINUS))     &kp LS(LC(TAB))        &kp PG_DN          &kp PG_UP          &kp LC(TAB)        &insert_new_line
+                                         &kp TILDE     &kp SPACE    &kp LSHFT    &kp SPACE             &kp LG(LS(LEFT))       &kp LS(LG(RIGHT))
             >;
         };
 
-        //        default_layer {
-        // -----------------------------------------------------------------------------------------
-        // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | DEL  |
-        // | BSPC |  A  |  R  |  S  |  T  |  G  |   |  K  |  N   |  E  |  I  |  O  |  '   |
-        // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  M  |  H   |  ,  |  .  |  /  | ENT  |
-        //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-        //            bindings = <
-        //&kp TAB        &kp Q  &kp W  &kp F      &kp P  &kp B        &kp J    &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp DELETE
-        //&kp BACKSPACE  &kp A  &kp R  &kp S      &kp T  &kp G        &kp K    &kp N  &kp E      &kp I    &kp O          &kp SQT
-        //&kp LSHFT      &kp Z  &kp X  &kp C      &kp D  &kp V        &kp M    &kp H  &kp COMMA  &kp DOT  &kp FSLH       &kp ENTER
-        //                             &kp LGUI   &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
-        //            >;
-        //        };
-        //        nav_layer {
-        // -----------------------------------------------------------------------------------------
-        // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
-        // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-        // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-        //                    | GUI |     | SPC |   | ENT |     | ALT |
-        //            bindings = <
-        //&kp KP_MULTIPLY       &kp MINUS      &mt AMPERSAND N7          &mt ASTERISK N8       &mt LEFT_PARENTHESIS N9  &kp PLUS          &kp HOME                  &select_word_previous  &select_all_left   &select_all_right  &select_word_next  &kp END
-        //&kp SLASH             &kp BACKSPACE  &mt DOLLAR NUMBER_4       &mt PERCENT N5        &mt CARET NUMBER_6       &kp ENTER         &kp LS(LC(LG(LEFT_ALT)))  &kp LEFT               &kp DOWN           &kp UP_ARROW       &kp RIGHT_ARROW    &new_line
-        //&kp NON_US_BACKSLASH  &kp N0         &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3        &kp PERIOD        &kp LA(LS(MINUS))         &kp LS(LC(TAB))        &kp PAGE_DOWN      &kp PG_UP          &kp LC(TAB)        &insert_new_line
-        //                                                               &kp TILDE             &kp SPACE                &kp LEFT_SHIFT    &kp SPACE                 &kp LG(LS(LEFT))       &kp LS(LG(RIGHT))
-        //            >;
-        //        };
-
         lower_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BSPC |
-            // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
-            // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
             bindings = <
 &kp TAB     &trans        &trans        &trans        &trans        &trans          &trans          &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp BSPC
 &bt BT_CLR  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6          &kp N7     &kp N8     &kp N9            &kp N0             &trans
@@ -177,12 +155,6 @@
         };
 
         raise_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BSPC |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
             bindings = <
 &kp TAB    &trans    &trans  &trans    &trans    &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans
 &kp LCTRL  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
