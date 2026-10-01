@@ -9,6 +9,35 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+	behaviors {
+        HMR: HMR {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HMR";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            hold-trigger-key-positions = <0 1 2 3 4 5 12 13 14 15 16 17 24 25 26 27 28 29 36 37 38 39 40 41>;
+            hold-trigger-on-release;
+        };
+
+        HML: HML {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HML";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <280>;
+            quick-tap-ms = <175>;
+            flavor = "tap-preferred";
+            hold-trigger-on-release;
+            hold-trigger-key-positions = <36 37 38 6 7 8 9 10 11 18 19 20 21 22 23 30 31 32 33 34 35 39 40 41>;
+        };
+    };
+
+
     macros {
         select_word_previous: select_word_previous {
             compatible = "zmk,behavior-macro";
@@ -86,8 +115,8 @@
             &kp TAB      &kp Q        &kp W        &kp F        &kp P        &kp B            &kp J        &kp L        &kp U        &kp Y        &kp SEMI     &kp DEL
         //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
         //│    BSPC    │     A      │     R      │     S      │     T      │     G      │   │     K      │     N      │     E      │     I      │     O      │     '      │
-            &kp BSPC     &kp A        &kp R        &kp S        &kp T        &kp G            &kp K        &kp N        &kp E        &kp I        &kp O        &kp SQT
-        //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+            &kp BSPC    &HML LEFT_CONTROL A   &HML LEFT_ALT R  &HML LEFT_WIN S        &kp T        &kp G            &kp K        &kp N        &HMR LEFT_GUI E        &HMR RIGHT_ALT I        &HMR RIGHT_CONTROL O        &kp SQT
+		//├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
         //│   LSHIFT   │     Z      │     X      │     C      │     D      │     V      │   │     M      │     H      │     ,      │     .      │     /      │   ENTER    │
             &kp LSHFT    &kp Z        &kp X        &kp C        &kp D        &kp V            &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH     &kp RET
         //╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
