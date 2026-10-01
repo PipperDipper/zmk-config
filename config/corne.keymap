@@ -133,7 +133,7 @@
             &kp TAB      &kp Q        &kp W        &kp F        &kp P        &kp B            &kp J        &kp L        &kp U        &kp Y        &kp SEMI     &kp DEL
         //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
         //│    BSPC    │     A      │     R      │     S      │     T      │     G      │   │     K      │     N      │     E      │     I      │     O      │     '      │
-            &kp BSPC    &HML LEFT_WIN A   &HML LEFT_ALT R  &HML LEFT_CONTROL S        &kp T        &kp G            &kp K        &kp N        &HMR LEFT_GUI E        &HMR RIGHT_ALT I        &HMR RIGHT_CONTROL O        &kp SQT
+            &kp BSPC    &HML LEFT_WIN A   &HML LEFT_ALT R  &HML LEFT_CONTROL S        &kp T        &kp G            &kp K        &kp N        &HMR RIGHT_CONTROL E        &HMR RIGHT_ALT I        &HMR LEFT_GUI O        &kp SQT
 		//├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
         //│   LSHIFT   │     Z      │     X      │     C      │     D      │     V      │   │     M      │     H      │     ,      │     .      │     /      │   ENTER    │
             &kp LSHFT    &kp Z        &kp X        &kp C        &kp D        &kp V            &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH     &kp RET
