@@ -11,7 +11,67 @@
 / {
     {
 
+//    macros {
     macros {
+        select_word_previous: select_word_previous {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LS(LEFT_ARROW))>;
+            label = "SELECT_WORD_PREVIOUS";
+        };
+
+        select_word_next: select_word_next {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(LA(RIGHT_ARROW))>;
+            label = "SELECT_WORD_NEXT";
+        };
+
+        select_all_left: select_all_left {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(HOME)>;
+            label = "SELECT_ALL_LEFT";
+        };
+
+        select_all_right: select_all_right {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LS(END)>;
+            label = "SELECT_ALL_RIGHT";
+        };
+
+        select_line: select_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp HOME &select_all_right>;
+            label = "SELECT_LINE";
+        };
+
+        insert_new_line: insert_new_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp UP_ARROW &new_line>;
+            label = "INSERT_NEW_LINE";
+        };
+
+        new_line: new_line {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp END &kp ENTER>;
+            label = "NEW_LINE";
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        select_line {
+            bindings = <&select_line>;
+            key-positions = <8 9 37>;
+        };
+    };
+
         new_macro: new_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
