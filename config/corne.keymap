@@ -79,35 +79,78 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
+	default_layer {
+            bindings = <
+        //╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
+        //│    TAB     │     Q      │     W      │     F      │     P      │     B      │   │     J      │     L      │     U      │     Y      │     ;      │    DEL     │
+            &kp TAB      &kp Q        &kp W        &kp F        &kp P        &kp B            &kp J        &kp L        &kp U        &kp Y        &kp SEMI     &kp DEL
+        //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+        //│    BSPC    │     A      │     R      │     S      │     T      │     G      │   │     K      │     N      │     E      │     I      │     O      │     '      │
+            &kp BSPC     &kp A        &kp R        &kp S        &kp T        &kp G            &kp K        &kp N        &kp E        &kp I        &kp O        &kp SQT
+        //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+        //│   LSHIFT   │     Z      │     X      │     C      │     D      │     V      │   │     M      │     H      │     ,      │     .      │     /      │   ENTER    │
+            &kp LSHFT    &kp Z        &kp X        &kp C        &kp D        &kp V            &kp M        &kp H        &kp COMMA    &kp DOT      &kp FSLH     &kp RET
+        //╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+        //                                       │    GUI     │   LOWER    │   SPACE    │   │   ENTER    │   RAISE    │    ALT     │
+                                                   &kp LGUI     &mo 1        &kp SPACE        &kp RET      &mo 2        &kp RALT
+        //                                       ╰────────────┴────────────┴────────────╯   ╰────────────┴────────────┴────────────╯
+            >;
+        };
+
+	nav_layer {
+            bindings = <
+        //╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮   ╭────────────┬────────────┬────────────┬────────────┬────────────┬────────────╮
+        //│    KP *    │     -      │    &  7    │    *  8    │    (  9    │     +      │   │    HOME    │  Prv Word  │ Sel All L  │ Sel All R  │  Nxt Word  │    END     │
+            &kp KP_STAR  &kp MINUS    &mt AMPS N7  &mt ASTRK N8 &mt LPAR N9  &kp PLUS         &kp HOME     &select_word_previous &select_all_left &select_all_right &select_word_next &kp END
+        //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+        //│    KP /    │    BSPC    │    $  4    │    %  5    │    ^  6    │   ENTER    │   │ S-C-A-GUI  │    LEFT    │    DOWN    │     UP     │   RIGHT    │  New Line  │
+            &kp KP_SLASH &kp BSPC     &mt DLLR N4  &mt PRCNT N5 &mt CARET N6 &kp RET          &kp LS(LC(LA(LGUI))) &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT    &new_line
+        //├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┼────────────┼────────────┤
+        //│     \      │     0      │    !  1    │    @  2    │    #  3    │     .      │   │ A-S-MINUS  │  C-S-TAB   │   PG DN    │   PG UP    │   C-TAB    │ Ins NwLine │
+            &kp BSLH     &kp N0       &mt EXCL N1  &mt AT N2    &mt HASH N3  &kp DOT          &kp LA(LS(MINUS)) &kp LS(LC(TAB)) &kp PG_DN  &kp PG_UP    &kp LC(TAB)  &insert_new_line
+        //╰────────────┴────────────┴────────────┼────────────┼────────────┼────────────┤   ├────────────┼────────────┼────────────┼────────────┴────────────┴────────────╯
+        //                                       │     ~      │   SPACE    │   LSHIFT   │   │   SPACE    │ G-S-LEFT   │ G-S-RIGHT  │
+                                                   &kp TILDE    &kp SPACE    &kp LSHFT        &kp SPACE    &kp LG(LS(LEFT)) &kp LS(LG(RIGHT))
+        //                                       ╰────────────┴────────────┴────────────╯   ╰────────────┴────────────┴────────────╯
+            >;
+        };
+
+
+
+
+//        default_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  F  |  P  |  B  |   |  J  |  L   |  U  |  Y  |  ;  | DEL  |
             // | BSPC |  A  |  R  |  S  |  T  |  G  |   |  K  |  N   |  E  |  I  |  O  |  '   |
             // | SHFT |  Z  |  X  |  C  |  D  |  V  |   |  M  |  H   |  ,  |  .  |  /  | ENT  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
-            bindings = <
-&kp TAB        &kp Q  &kp W  &kp F      &kp P  &kp B        &kp J    &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp DELETE
-&kp BACKSPACE  &kp A  &kp R  &kp S      &kp T  &kp G        &kp K    &kp N  &kp E      &kp I    &kp O          &kp SQT
-&kp LSHFT      &kp Z  &kp X  &kp C      &kp D  &kp V        &kp M    &kp H  &kp COMMA  &kp DOT  &kp FSLH       &kp ENTER
-                             &kp LGUI   &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
-            >;
-        };
+//            bindings = <
+//&kp TAB        &kp Q  &kp W  &kp F      &kp P  &kp B        &kp J    &kp L  &kp U      &kp Y    &kp SEMICOLON  &kp DELETE
+//&kp BACKSPACE  &kp A  &kp R  &kp S      &kp T  &kp G        &kp K    &kp N  &kp E      &kp I    &kp O          &kp SQT
+//&kp LSHFT      &kp Z  &kp X  &kp C      &kp D  &kp V        &kp M    &kp H  &kp COMMA  &kp DOT  &kp FSLH       &kp ENTER
+//                             &kp LGUI   &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+//            >;
+//        };
 
-        nav_layer {
+
+
+
+
+//        nav_layer {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  1  |  2  |  3  |  4  |  5  |   |  6  |  7  |  8  |  9  |  0  | BKSP |
             // | BTCLR| BT1 | BT2 | BT3 | BT4 | BT5 |   | LFT | DWN |  UP | RGT |     |      |
             // | SHFT |     |     |     |     |     |   |     |     |     |     |     |      |
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
-            bindings = <
-&kp KP_MULTIPLY       &kp MINUS      &mt AMPERSAND N7          &mt ASTERISK N8       &mt LEFT_PARENTHESIS N9  &kp PLUS          &kp HOME                  &select_word_previous  &select_all_left   &select_all_right  &select_word_next  &kp END
-&kp SLASH             &kp BACKSPACE  &mt DOLLAR NUMBER_4       &mt PERCENT N5        &mt CARET NUMBER_6       &kp ENTER         &kp LS(LC(LG(LEFT_ALT)))  &kp LEFT               &kp DOWN           &kp UP_ARROW       &kp RIGHT_ARROW    &new_line
-&kp NON_US_BACKSLASH  &kp N0         &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3        &kp PERIOD        &kp LA(LS(MINUS))         &kp LS(LC(TAB))        &kp PAGE_DOWN      &kp PG_UP          &kp LC(TAB)        &insert_new_line
-                                                               &kp TILDE             &kp SPACE                &kp LEFT_SHIFT    &kp SPACE                 &kp LG(LS(LEFT))       &kp LS(LG(RIGHT))
-            >;
-        };
+//            bindings = <
+//&kp KP_MULTIPLY       &kp MINUS      &mt AMPERSAND N7          &mt ASTERISK N8       &mt LEFT_PARENTHESIS N9  &kp PLUS          &kp HOME                  &select_word_previous  &select_all_left   &select_all_right  &select_word_next  &kp END
+//&kp SLASH             &kp BACKSPACE  &mt DOLLAR NUMBER_4       &mt PERCENT N5        &mt CARET NUMBER_6       &kp ENTER         &kp LS(LC(LG(LEFT_ALT)))  &kp LEFT               &kp DOWN           &kp UP_ARROW       &kp RIGHT_ARROW    &new_line
+//&kp NON_US_BACKSLASH  &kp N0         &mt EXCLAMATION NUMBER_1  &mt AT_SIGN NUMBER_2  &mt HASH NUMBER_3        &kp PERIOD        &kp LA(LS(MINUS))         &kp LS(LC(TAB))        &kp PAGE_DOWN      &kp PG_UP          &kp LC(TAB)        &insert_new_line
+//                                                               &kp TILDE             &kp SPACE                &kp LEFT_SHIFT    &kp SPACE                 &kp LG(LS(LEFT))       &kp LS(LG(RIGHT))
+//            >;
+//        };
 
         lower_layer {
             // -----------------------------------------------------------------------------------------
