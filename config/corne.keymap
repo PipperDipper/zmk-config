@@ -129,7 +129,7 @@
 
         default_layer_win {
             bindings = <
-&kp TAB    &kp Q            &kp W            &kp F                &kp P  &kp B        &kp J      &kp L  &kp U                 &kp Y             &kp SEMI         &kp DEL
+&kp TAB    &kp Q            &kp W            &kp F                &kp P  &kp B        &kp J      &kp L  &kp U                 &kp Y             &kp SEMI         &kp ESC
 &kp BSPC   &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &kp T  &kp G        &kp K      &kp N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &kp SQT
 &kp LSHFT  &kp Z            &kp X            &kp C                &kp D  &kp V        &kp M      &kp H  &kp COMMA             &kp DOT           &kp FSLH         &kp RET
                                              &kp LCTRL            &mo 4  &kp SPACE    &kp SPACE  &mo 3  &mo 2
