@@ -125,7 +125,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer_mac {
+        mac {
             bindings = <
 &kp TAB    &kp Q                &kp W            &kp F            &kp P  &kp B        &kp J      &kp L  &kp U            &kp Y             &td_colon             &kp ESCAPE
 &kp BSPC   &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &kp T  &kp G        &kp K      &kp N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
@@ -134,7 +134,7 @@
             >;
         };
 
-        default_layer_win {
+        windows {
             bindings = <
 &kp TAB    &kp Q            &kp W            &kp F                &kp P  &kp B        &kp J      &kp L  &kp U                 &kp Y             &kp SEMI         &kp ESC
 &kp BSPC   &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &kp T  &kp G        &kp K      &kp N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &kp SQT
@@ -143,7 +143,7 @@
             >;
         };
 
-        nav_layer {
+        navigate {
             bindings = <
 &kp KP_MULTIPLY  &kp MINUS  &ht AMPS N7  &ht ASTRK N8  &ht LPAR N9   &kp PLUS     &kp HOME              &select_word_previous  &select_all_left  &select_all_right  &select_word_next  &kp END
 &kp KP_DIVIDE    &kp BSPC   &ht DLLR N4  &ht PRCNT N5  &ht CARET N6  &kp RET      &kp LS(LC(LA(LGUI)))  &kp LEFT               &kp DOWN          &kp UP             &kp RIGHT          &new_line
@@ -152,25 +152,25 @@
             >;
         };
 
-        numbers_layer {
+        numbers {
             bindings = <
-&kp TAB     &trans        &trans        &trans        &trans        &trans          &trans          &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DELETE
+&kp TAB     &bootloader   &trans        &trans        &trans        &trans          &trans          &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DELETE
 &bt BT_CLR  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6          &kp N7     &kp N8     &kp N9            &kp N0             &trans
 &kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT_ARROW  &kp DOWN   &kp UP     &kp RIGHT         &trans             &trans
                                         &kp LGUI      &mo 5         &kp SPACE       &kp RET         &trans     &kp RALT
             >;
         };
 
-        symbols_layer {
+        symbols {
             bindings = <
-&kp TAB    &trans    &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
-&kp LCTRL  &kp EXCL  &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
-&kp LSHFT  &trans    &trans  &trans          &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
-                             &kp LGUI        &trans          &kp SPACE    &kp RET    &mo 5           &kp RALT
+&kp TAB    &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
+&kp LCTRL  &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
+&kp LSHFT  &trans       &trans  &trans          &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
+                                &kp LGUI        &trans          &kp SPACE    &kp RET    &mo 5           &kp RALT
             >;
         };
 
-        management_layer {
+        manage {
             bindings = <
 &trans      &trans        &trans        &trans        &trans        &bootloader     &trans  &trans  &trans  &trans  &trans  &trans
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &tog 1  &tog 0  &trans  &trans  &trans  &trans
