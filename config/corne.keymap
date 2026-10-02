@@ -46,6 +46,13 @@
             quick-tap-ms = <0>;
             flavor = "tap-preferred";
         };
+
+        td_colon: td_colon {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_COLON";
+            #binding-cells = <0>;
+            bindings = <&kp SEMICOLON>, <&kp COLON>;
+        };
     };
 
     macros {
@@ -120,7 +127,7 @@
 
         default_layer_mac {
             bindings = <
-&kp TAB    &kp Q                &kp W            &kp F            &kp P  &kp B        &kp J      &kp L  &kp U            &kp Y             &kp SEMI              &kp ESCAPE
+&kp TAB    &kp Q                &kp W            &kp F            &kp P  &kp B        &kp J      &kp L  &kp U            &kp Y             &td_colon             &kp ESCAPE
 &kp BSPC   &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &kp T  &kp G        &kp K      &kp N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
 &kp LSHFT  &kp Z                &kp X            &kp C            &kp D  &kp V        &kp M      &kp H  &kp COMMA        &kp DOT           &kp FSLH              &kp RET
                                                  &kp LGUI         &mo 4  &kp SPACE    &kp SPACE  &mo 3  &mo 2
