@@ -53,6 +53,13 @@
             #binding-cells = <0>;
             bindings = <&kp SEMICOLON>, <&kp COLON>;
         };
+
+        td_shift_CAPS_WORD: td_shift_CAPS_WORD {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_SHIFT_CAPS_WORD";
+            #binding-cells = <0>;
+            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
+        };
     };
 
     macros {
@@ -132,10 +139,10 @@
 
         mac {
             bindings = <
-&kp TAB    &kp Q                &kp W            &kp F            &kp P  &kp B        &kp J      &kp L  &kp U            &kp Y             &td_colon             &kp ESCAPE
-&kp BSPC   &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &kp T  &kp G        &kp K      &kp N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
-&kp LSHFT  &kp Z                &kp X            &kp C            &kp D  &kp V        &kp M      &kp H  &kp COMMA        &kp DOT           &kp FSLH              &kp RET
-                                                 &kp LGUI         &mo 4  &kp SPACE    &kp SPACE  &mo 3  &mo 2
+&kp TAB              &kp Q                &kp W            &kp F            &kp P  &kp B        &kp J      &kp L  &kp U            &kp Y             &td_colon             &kp ESCAPE
+&kp BSPC             &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &kp T  &kp G        &kp K      &kp N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
+&td_shift_CAPS_WORD  &kp Z                &kp X            &kp C            &kp D  &kp V        &kp M      &kp H  &kp COMMA        &kp DOT           &kp FSLH              &kp RET
+                                                           &kp LGUI         &mo 4  &kp SPACE    &kp SPACE  &mo 3  &mo 2
             >;
         };
 
