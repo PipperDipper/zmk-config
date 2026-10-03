@@ -60,6 +60,16 @@
             #binding-cells = <0>;
             bindings = <&sk LEFT_SHIFT>, <&caps_word>;
         };
+
+        copy_paste: copy_paste {
+            compatible = "zmk,behavior-hold-tap";
+            label = "COPY_PASTE";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            hold-trigger-key-positions = <25 26 27 28 29>;
+            tapping-term-ms = <10>;
+        };
     };
 
     macros {
@@ -137,6 +147,16 @@
             bindings = <&kp LA(BACKSPACE)>;
             key-positions = <12 13>;
         };
+
+        bootloader_left {
+            bindings = <&bootloader>;
+            key-positions = <36 37 38 5>;
+        };
+
+        bootloader_right {
+            bindings = <&bootloader>;
+            key-positions = <6 39 40 41>;
+        };
     };
 
     keymap {
@@ -144,10 +164,10 @@
 
         mac {
             bindings = <
-&kp TAB              &kp Q                &kp W            &kp F            &kp P  &kp B        &kp J      &kp L  &kp U            &kp Y             &td_colon             &kp ESCAPE
-&kp BSPC             &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &kp T  &kp G        &kp K      &kp N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
-&td_shift_CAPS_WORD  &kp Z                &kp X            &kp C            &kp D  &kp V        &kp M      &kp H  &kp COMMA        &kp DOT           &kp FSLH              &kp RET
-                                                           &kp LGUI         &mo 4  &kp SPACE    &kp SPACE  &mo 3  &mo 2
+&kp TAB              &kp Q                &kp W            &kp F            &kp P        &kp B          &kp J      &kp L  &kp U            &kp Y             &td_colon             &kp ESCAPE
+&kp BSPC             &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &kp T        &kp G          &kp K      &kp N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
+&td_shift_CAPS_WORD  &ht LG(Z) Z          &ht LG(X) X      &ht LG(C) C      &ht LG(D) D  &ht LG(V) V    &kp M      &kp H  &kp COMMA        &kp DOT           &kp FSLH              &kp RET
+                                                           &kp LGUI         &mo 4        &kp SPACE      &kp SPACE  &mo 3  &mo 2
             >;
         };
 
