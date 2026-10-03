@@ -120,6 +120,11 @@
             bindings = <&select_line>;
             key-positions = <8 9 37>;
         };
+
+        esc_combo {
+            bindings = <&kp ESCAPE>;
+            key-positions = <24 25>;
+        };
     };
 
     keymap {
