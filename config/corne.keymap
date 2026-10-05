@@ -9,6 +9,15 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        tri_layer {
+            if-layers = <symbols numbers>; // Active when layer 1 and 2 are pressed
+            then-layer = manage;  // Activates layer 3
+        };
+    };
+
     behaviors {
         HMR: HMR {
             compatible = "zmk,behavior-hold-tap";
