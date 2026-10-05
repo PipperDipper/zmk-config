@@ -74,6 +74,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_SHIFT_CAPS_WORD";
             #binding-cells = <0>;
+            tapping-term-ms = <200>;
             bindings = <&sk LEFT_SHIFT>, <&caps_word>;
         };
 
