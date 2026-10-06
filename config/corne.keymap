@@ -164,24 +164,31 @@
             key-positions = <24 25>;
         };
 
-        word_delete {
+        word_delete_mac {
             bindings = <&kp LA(BACKSPACE)>;
             key-positions = <12 13>;
+            layers = <0>;
         };
 
         bootloader_left {
             bindings = <&bootloader>;
-            key-positions = <36 37 38 5>;
+            key-positions = <37 5 4 3>;
         };
 
         bootloader_right {
             bindings = <&bootloader>;
-            key-positions = <6 39 40 41>;
+            key-positions = <6 40 7 8>;
         };
 
         word_caps {
             bindings = <&caps_word>;
             key-positions = <31 28>;
+        };
+
+        word_delete_win {
+            bindings = <&kp LC(BACKSPACE)>;
+            key-positions = <12 13>;
+            layers = <1>;
         };
     };
 
