@@ -208,17 +208,17 @@
             bindings = <
 &kp TAB     &bootloader   &trans        &trans        &trans        &trans          &trans          &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DELETE
 &bt BT_CLR  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6          &kp N7     &kp N8     &kp N9            &kp N0             &trans
-&kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT_ARROW  &kp DOWN   &kp UP     &kp RIGHT         &trans             &trans
+&kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT_ARROW  &kp DOWN   &kp UP     &kp RIGHT         &trans             &bootloader
                                         &kp LGUI      &kp SPACE     &trans          &trans          &kp ENTER  &kp RALT
             >;
         };
 
         symbols {
             bindings = <
-&kp TAB    &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
-&kp LCTRL  &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
-&kp LSHFT  &trans       &trans  &trans          &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
-                                &kp LGUI        &kp SPACE       &trans       &trans     &kp ENTER       &kp RALT
+&kp TAB      &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
+&kp LCTRL    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
+&bootloader  &trans       &trans  &trans          &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
+                                  &kp LGUI        &kp SPACE       &trans       &trans     &kp ENTER       &kp RALT
             >;
         };
 
