@@ -70,24 +70,6 @@
             bindings = <&kp SEMICOLON>, <&kp COLON>;
         };
 
-        td_shift_CAPS_WORD: td_shift_CAPS_WORD {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_SHIFT_CAPS_WORD";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&sk LEFT_SHIFT>, <&caps_word>;
-        };
-
-        copy_paste: copy_paste {
-            compatible = "zmk,behavior-hold-tap";
-            label = "COPY_PASTE";
-            bindings = <&kp>, <&kp>;
-
-            #binding-cells = <2>;
-            hold-trigger-key-positions = <25 26 27 28 29>;
-            tapping-term-ms = <10>;
-        };
-
         Bckspc_Del: Bckspc_Del {
             compatible = "zmk,behavior-mod-morph";
             label = "BCKSPC_DEL";
@@ -227,7 +209,7 @@
 &kp TAB     &bootloader   &trans        &trans        &trans        &trans          &trans          &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DELETE
 &bt BT_CLR  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6          &kp N7     &kp N8     &kp N9            &kp N0             &trans
 &kp LSHFT   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &kp LEFT_ARROW  &kp DOWN   &kp UP     &kp RIGHT         &trans             &trans
-                                        &kp LGUI      &trans        &kp SPACE       &kp RET         &trans     &kp RALT
+                                        &kp LGUI      &kp SPACE     &trans          &trans          &kp ENTER  &kp RALT
             >;
         };
 
@@ -236,7 +218,7 @@
 &kp TAB    &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
 &kp LCTRL  &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
 &kp LSHFT  &trans       &trans  &trans          &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
-                                &kp LGUI        &trans          &kp SPACE    &kp RET    &trans          &kp RALT
+                                &kp LGUI        &kp SPACE       &trans       &trans     &kp ENTER       &kp RALT
             >;
         };
 
