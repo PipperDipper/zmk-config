@@ -210,7 +210,7 @@
         };
 
         win_word_jump_right {
-            bindings = <&none>;
+            bindings = <&kp LC(RIGHT)>;
             key-positions = <21 22>;
             layers = <1>;
         };
