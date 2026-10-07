@@ -14,7 +14,6 @@
 #define NUMBERS 3
 #define SYMBOLS 4
 #define MANAGE 5
-
 #define MAC_WORD_DEL &kp LA(BSPC)  // Option (LA = Left Alt) + Backspace
 #define WIN_WORD_DEL &kp LC(BSPC)  // Control (LC = Left Ctrl) + Backspace
 
@@ -185,6 +184,36 @@
             key-positions = <12 13>;
             layers = <1>;
         };
+
+        mac_word_jump_left {
+            bindings = <&kp LA(LEFT)>;
+            key-positions = <19 20>;
+            layers = <0>;
+        };
+
+        mac_word_jump_right {
+            bindings = <&kp LA(RIGHT)>;
+            key-positions = <21 22>;
+            layers = <0>;
+        };
+
+        Forward_Delete {
+            bindings = <&kp DELETE>;
+            key-positions = <12 13 14>;
+            layers = <0 1>;
+        };
+
+        win_word_jump_left {
+            bindings = <&kp LC(LEFT)>;
+            key-positions = <19 20>;
+            layers = <1>;
+        };
+
+        win_word_jump_right {
+            bindings = <&none>;
+            key-positions = <21 22>;
+            layers = <1>;
+        };
     };
 
     keymap {
@@ -193,22 +222,24 @@
         mac {
             display-name = "MAC";
             bindings = <
-&kp TAB               &kp Q                &kp W            &kp F            &kp P              &kp B          &kp J  &kp L                &kp U            &kp Y             &td_colon             &kp ESCAPE
+&kp TAB               &kp Q                &kp W            &kp F            &kp P              &kp B          &kp J  &kp L               &kp U            &kp Y             &td_colon             &kp ESCAPE
 &Bckspc_Del           &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
-&sk_shift LEFT_SHIFT  &ht LG(Z) Z          &ht LG(X) X      &ht LG(C) C      &ht LG(D) D        &ht LG(V) V    &kp M  &kp H                &kp COMMA        &kp DOT           &kp FSLH              &kp RET
-                                                                             &kp LGUI           &kp SPACE      &mo 4  &mo 3  &kp SPACE            &mo NAVIGATE
+&sk_shift LEFT_SHIFT  &ht LG(Z) Z          &ht LG(X) X      &ht LG(C) C      &ht LG(D) D        &ht LG(V) V    &kp M  &kp H               &kp COMMA        &kp DOT           &kp FSLH              &kp RET
+                                                            &kp LGUI         &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo NAVIGATE
             >;
+
             // FIXED: Changed &mo NAV to &mo NAVIGATE
         };
 
         windows {
             display-name = "WINDOWS";
             bindings = <
-&kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L                &kp U                &kp Y             &td_colon        &kp ESC
+&kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L               &kp U                 &kp Y             &td_colon        &kp ESC
 &Bckspc_Del           &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &kp SQT
-&sk_shift LEFT_SHIFT  &ht LC(Z) Z      &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H                &kp COMMA            &kp DOT           &kp FSLH         &kp RET
-                                                                             &kp LCTRL          &kp SPACE      &mo 4  &mo 3  &kp SPACE            &mo NAVIGATE
+&sk_shift LEFT_SHIFT  &ht LC(Z) Z      &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H               &kp COMMA             &kp DOT           &kp FSLH         &kp RET
+                                                        &kp LCTRL            &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo NAVIGATE
             >;
+
             // FIXED: Changed &mo NAV to &mo NAVIGATE
         };
 
@@ -235,10 +266,10 @@
         symbols {
             display-name = "SYMBOLS";
             bindings = <
-&kp TAB      &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans        &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
-&kp LCTRL    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT     &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
-&bootloader  &trans       &trans  &trans          &trans          &trans        &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
-                                  &kp LGUI        &kp SPACE       &trans        &trans     &kp ENTER       &kp RALT
+&kp TAB      &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
+&kp LCTRL    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
+&bootloader  &trans       &trans  &trans          &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
+                                  &kp LGUI        &kp SPACE       &trans       &trans     &kp ENTER       &kp RALT
             >;
         };
 
@@ -250,6 +281,7 @@
 &trans      &trans        &trans        &trans        &trans        &trans          &trans        &trans    &trans  &trans  &trans  &trans
                                         &trans        &trans        &trans          &trans        &trans    &trans
             >;
+
             // FIXED: Changed &tog WIN to &tog WINDOWS
         };
 
