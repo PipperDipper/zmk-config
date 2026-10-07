@@ -23,8 +23,8 @@
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <NUM SYM>; // Active when layer 3 (numbers) and layer 4 (symbols) are pressed
-            then-layer = <MANAGE>; // Activates layer 5 (manage)
+            if-layers = <NUMBERS SYMBOLS>; // FIXED: Updated from <NUM SYM>
+            then-layer = <MANAGE>;
         };
     };
 
@@ -78,9 +78,9 @@
             label = "STICKY_KEY_SHIFT";
             #binding-cells = <1>;
             bindings = <&kp>;
-            release-after-ms = <1500>; // Adjust timeout as needed
-            quick-release;             // Prevents double-capitalization
-            ignore-modifiers;          // Keeps it active if you press another mod (like CTRL)
+            release-after-ms = <1500>;
+            quick-release;
+            ignore-modifiers;
         };
 
         Bckspc_Del: Bckspc_Del {
@@ -193,21 +193,23 @@
         mac {
             display-name = "MAC";
             bindings = <
-&kp TAB               &kp Q                &kp W            &kp F            &kp P              &kp B          &kp J  &kp L               &kp U            &kp Y             &td_colon             &kp ESCAPE
+&kp TAB               &kp Q                &kp W            &kp F            &kp P              &kp B          &kp J  &kp L                &kp U            &kp Y             &td_colon             &kp ESCAPE
 &Bckspc_Del           &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
-&sk_shift LEFT_SHIFT  &ht LG(Z) Z          &ht LG(X) X      &ht LG(C) C      &ht LG(D) D        &ht LG(V) V    &kp M  &kp H               &kp COMMA        &kp DOT           &kp FSLH              &kp RET
-                                                            &kp LGUI         &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo NAV
+&sk_shift LEFT_SHIFT  &ht LG(Z) Z          &ht LG(X) X      &ht LG(C) C      &ht LG(D) D        &ht LG(V) V    &kp M  &kp H                &kp COMMA        &kp DOT           &kp FSLH              &kp RET
+                                                                             &kp LGUI           &kp SPACE      &mo 4  &mo 3  &kp SPACE            &mo NAVIGATE
             >;
+            // FIXED: Changed &mo NAV to &mo NAVIGATE
         };
 
         windows {
             display-name = "WINDOWS";
             bindings = <
-&kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L               &kp U                 &kp Y             &td_colon        &kp ESC
+&kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L                &kp U                &kp Y             &td_colon        &kp ESC
 &Bckspc_Del           &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &kp SQT
-&sk_shift LEFT_SHIFT  &ht LC(Z) Z      &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H               &kp COMMA             &kp DOT           &kp FSLH         &kp RET
-                                                        &kp LCTRL            &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo NAV
+&sk_shift LEFT_SHIFT  &ht LC(Z) Z      &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H                &kp COMMA            &kp DOT           &kp FSLH         &kp RET
+                                                                             &kp LCTRL          &kp SPACE      &mo 4  &mo 3  &kp SPACE            &mo NAVIGATE
             >;
+            // FIXED: Changed &mo NAV to &mo NAVIGATE
         };
 
         navigate {
@@ -233,21 +235,22 @@
         symbols {
             display-name = "SYMBOLS";
             bindings = <
-&kp TAB      &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
-&kp LCTRL    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
-&bootloader  &trans       &trans  &trans          &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
-                                  &kp LGUI        &kp SPACE       &trans       &trans     &kp ENTER       &kp RALT
+&kp TAB      &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans        &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
+&kp LCTRL    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT     &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
+&bootloader  &trans       &trans  &trans          &trans          &trans        &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
+                                  &kp LGUI        &kp SPACE       &trans        &trans     &kp ENTER       &kp RALT
             >;
         };
 
         manage {
             display-name = "MANAGE";
             bindings = <
-&trans      &trans        &trans        &trans        &trans        &bootloader     &trans    &trans    &trans  &trans  &trans  &trans
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &tog WIN  &tog MAC  &trans  &trans  &trans  &trans
-&trans      &trans        &trans        &trans        &trans        &trans          &trans    &trans    &trans  &trans  &trans  &trans
-                                        &trans        &trans        &trans          &trans    &trans    &trans
+&trans      &trans        &trans        &trans        &trans        &bootloader     &trans        &trans    &trans  &trans  &trans  &trans
+&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &tog WINDOWS  &tog MAC  &trans  &trans  &trans  &trans
+&trans      &trans        &trans        &trans        &trans        &trans          &trans        &trans    &trans  &trans  &trans  &trans
+                                        &trans        &trans        &trans          &trans        &trans    &trans
             >;
+            // FIXED: Changed &tog WIN to &tog WINDOWS
         };
 
         layer_6 {
@@ -260,3 +263,4 @@
             >;
         };
     };
+};
