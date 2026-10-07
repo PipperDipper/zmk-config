@@ -14,6 +14,8 @@
 #define NUMBERS 3
 #define SYMBOLS 4
 #define MANAGE 5
+#define NAV_MAC 7
+#define NAV_WIN 8
 #define MAC_WORD_DEL &kp LA(BSPC)  // Option (LA = Left Alt) + Backspace
 #define WIN_WORD_DEL &kp LC(BSPC)  // Control (LC = Left Ctrl) + Backspace
 
@@ -302,7 +304,7 @@
             >;
         };
 
-        NAV_Mac {
+        NAV_MAC {
             display-name = "NAV_MAC";
             bindings = <
 &kp ESCAPE  &kp LG(Z)         &kp LG(X)     &kp LG(C)     &kp LG(V)       &kp LG(D)    &kp PAGE_UP    &kp LG(LEFT)  &kp UP_ARROW  &kp LG(RIGHT)  &kp BACKSPACE  &kp DEL
@@ -312,7 +314,7 @@
             >;
         };
 
-        NAV_Win {
+        NAV_WIN {
             display-name = "NAV_WIN";
             bindings = <
 &kp ESCAPE  &kp LC(Z)     &kp LC(X)     &kp LC(C)         &kp LC(V)       &kp LC(D)    &kp PAGE_UP    &kp HOME      &kp UP_ARROW  &kp END        &kp BACKSPACE  &kp DEL
