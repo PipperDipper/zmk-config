@@ -311,7 +311,7 @@
         };
 
         symbols_backup {
-            display-name = "SYMBOLS";
+            display-name = "SYMB";
             bindings = <
 &kp TAB      &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
 &kp LCTRL    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
@@ -321,7 +321,7 @@
         };
 
         layer_9 {
-            display-name = "NUMBERS";
+            display-name = "NUMB";
             bindings = <
 &trans  &trans  &trans  &trans    &trans     &trans    &trans          &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DELETE
 &trans  &kp N1  &kp N2  &kp N3    &kp N4     &kp N5    &kp N6          &kp N7     &kp N8     &kp N9            &kp N0             &trans
