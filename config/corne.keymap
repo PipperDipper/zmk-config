@@ -296,7 +296,7 @@
         };
 
         NAV_Mac {
-            display-name = "NAVIGATE";
+            display-name = "NAV_MAC";
             bindings = <
 &kp ESCAPE  &kp LG(Z)         &kp LG(X)     &kp LG(C)     &kp LG(V)       &kp LG(D)    &kp PAGE_UP    &kp LG(LEFT)  &kp UP_ARROW  &kp LG(RIGHT)  &kp BACKSPACE  &kp DEL
 &trans      &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &trans       &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &trans         &trans
@@ -306,7 +306,7 @@
         };
 
         NAV_Win {
-            display-name = "NAVIGATE";
+            display-name = "NAV_WIN";
             bindings = <
 &kp ESCAPE  &kp LC(Z)     &kp LC(X)     &kp LC(C)         &kp LC(V)       &kp LC(D)    &kp PAGE_UP    &kp HOME      &kp UP_ARROW  &kp END        &kp BACKSPACE  &kp DEL
 &trans      &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans       &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &trans         &trans
