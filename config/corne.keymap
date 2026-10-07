@@ -248,8 +248,8 @@
             bindings = <
 &kp KP_MULTIPLY  &kp MINUS  &ht AMPS N7  &ht ASTRK N8  &ht LPAR N9   &kp PLUS     &kp HOME       &select_all_left  &select_word_previous  &select_word_next  &select_all_right  &kp END
 &kp KP_DIVIDE    &trans     &trans       &trans        &trans        &kp RET      &kp LG(EQUAL)  &kp LEFT          &kp DOWN               &kp UP             &kp RIGHT          &new_line
-&kp BSLH         &kp N0     &ht EXCL N1  &ht AT N2     &ht HASH N3   &kp DOT      &kp LG(MINUS)  &kp LS(LC(TAB))   &kp PG_DN              &kp PG_UP          &kp LC(TAB)        &insert_new_line
-                                         &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT    &kp SPACE      &kp LG(LS(LEFT))  &trans
+&kp LEFT_SHIFT   &kp N0     &ht EXCL N1  &ht AT N2     &ht HASH N3   &kp DOT      &kp LG(MINUS)  &kp LS(LC(TAB))   &kp PG_DN              &kp PG_UP          &kp LC(TAB)        &insert_new_line
+                                         &kp LEFT_GUI  &kp LEFT_ALT  &kp LSHFT    &kp SPACE      &trans            &trans
             >;
         };
 
