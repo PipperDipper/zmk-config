@@ -90,6 +90,13 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        td_quote: td_quote {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_QUOTE";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp LS(SQT)>;
+        };
     };
 
     macros {
@@ -223,7 +230,7 @@
             display-name = "MAC";
             bindings = <
 &kp TAB               &kp Q                &kp W            &kp F            &kp P              &kp B          &kp J  &kp L               &kp U            &kp Y             &td_colon             &kp ESCAPE
-&Bckspc_Del           &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
+&Bckspc_Del           &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &td_quote
 &sk_shift LEFT_SHIFT  &ht LG(Z) Z          &ht LG(X) X      &ht LG(C) C      &ht LG(D) D        &ht LG(V) V    &kp M  &kp H               &kp COMMA        &kp DOT           &kp FSLH              &kp RET
                                                             &kp LGUI         &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo 7
             >;
@@ -235,7 +242,7 @@
             display-name = "WINDOWS";
             bindings = <
 &kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L               &kp U                 &kp Y             &td_colon        &kp ESC
-&Bckspc_Del           &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &kp SQT
+&Bckspc_Del           &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &td_quote
 &sk_shift LEFT_SHIFT  &ht LC(Z) Z      &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H               &kp COMMA             &kp DOT           &kp FSLH         &kp RET
                                                         &kp LCTRL            &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo 8
             >;
