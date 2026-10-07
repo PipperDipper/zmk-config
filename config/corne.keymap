@@ -15,6 +15,9 @@
 #define SYM 4
 #define MANAGE 5
 
+#define MAC_WORD_DEL &kp LA(BSPC)  // Option (LA = Left Alt) + Backspace
+#define WIN_WORD_DEL &kp LC(BSPC)  // Control (LC = Left Ctrl) + Backspace
+
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
