@@ -225,7 +225,7 @@
 &kp TAB               &kp Q                &kp W            &kp F            &kp P              &kp B          &kp J  &kp L               &kp U            &kp Y             &td_colon             &kp ESCAPE
 &Bckspc_Del           &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
 &sk_shift LEFT_SHIFT  &ht LG(Z) Z          &ht LG(X) X      &ht LG(C) C      &ht LG(D) D        &ht LG(V) V    &kp M  &kp H               &kp COMMA        &kp DOT           &kp FSLH              &kp RET
-                                                            &kp LGUI         &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo NAVIGATE
+                                                            &kp LGUI         &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo 7
             >;
 
             // FIXED: Changed &mo NAV to &mo NAVIGATE
@@ -237,7 +237,7 @@
 &kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L               &kp U                 &kp Y             &td_colon        &kp ESC
 &Bckspc_Del           &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &kp SQT
 &sk_shift LEFT_SHIFT  &ht LC(Z) Z      &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H               &kp COMMA             &kp DOT           &kp FSLH         &kp RET
-                                                        &kp LCTRL            &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo NAVIGATE
+                                                        &kp LCTRL            &kp SPACE          &mo 4          &mo 3  &kp SPACE           &mo 8
             >;
 
             // FIXED: Changed &mo NAV to &mo NAVIGATE
@@ -292,6 +292,26 @@
 &kp KP_DIVIDE    &kp BSPC   &ht DLLR N4  &ht PRCNT N5  &ht CARET N6  &kp RET      &kp LG(EQUAL)  &kp LEFT          &kp DOWN               &kp UP             &kp RIGHT          &new_line
 &kp BSLH         &kp N0     &ht EXCL N1  &ht AT N2     &ht HASH N3   &kp DOT      &kp LG(MINUS)  &kp LS(LC(TAB))   &kp PG_DN              &kp PG_UP          &kp LC(TAB)        &insert_new_line
                                          &kp TILDE     &kp SPACE     &kp LSHFT    &kp SPACE      &kp LG(LS(LEFT))  &trans
+            >;
+        };
+
+        NAV_Mac {
+            display-name = "NAVIGATE";
+            bindings = <
+&kp ESCAPE  &kp LG(Z)         &kp LG(X)     &kp LG(C)     &kp LG(V)       &kp LG(D)    &kp PAGE_UP    &kp LG(LEFT)  &kp UP_ARROW  &kp LG(RIGHT)  &kp BACKSPACE  &kp DEL
+&trans      &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &trans       &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &trans         &trans
+&trans      &kp LG(A)         &trans        &trans        &trans          &trans       &trans         &kp LA(LEFT)  &trans        &kp LA(RIGHT)  &trans         &trans
+                                            &trans        &trans          &trans       &trans         &trans        &trans
+            >;
+        };
+
+        NAV_Win {
+            display-name = "NAVIGATE";
+            bindings = <
+&kp ESCAPE  &kp LC(Z)     &kp LC(X)     &kp LC(C)         &kp LC(V)       &kp LC(D)    &kp PAGE_UP    &kp HOME      &kp UP_ARROW  &kp END        &kp BACKSPACE  &kp DEL
+&trans      &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans       &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &trans         &trans
+&trans      &kp LC(A)     &trans        &trans            &trans          &trans       &trans         &kp LC(LEFT)  &trans        &kp LC(RIGHT)  &trans         &trans
+                                        &trans            &trans          &trans       &trans         &trans        &trans
             >;
         };
     };
