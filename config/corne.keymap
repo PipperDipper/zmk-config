@@ -9,10 +9,10 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define MAC 0
-#define WIN 1
-#define NAV 2
-#define NUM 3
-#define SYM 4
+#define WINDOWS 1
+#define NAVIGATE 2
+#define NUMBERS 3
+#define SYMBOLS 4
 #define MANAGE 5
 
 #define MAC_WORD_DEL &kp LA(BSPC)  // Option (LA = Left Alt) + Backspace
@@ -191,6 +191,7 @@
         compatible = "zmk,keymap";
 
         mac {
+            display-name = "MAC";
             bindings = <
 &kp TAB               &kp Q                &kp W            &kp F            &kp P              &kp B          &kp J  &kp L               &kp U            &kp Y             &td_colon             &kp ESCAPE
 &Bckspc_Del           &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &kp SQT
@@ -200,6 +201,7 @@
         };
 
         windows {
+            display-name = "WINDOWS";
             bindings = <
 &kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L               &kp U                 &kp Y             &td_colon        &kp ESC
 &Bckspc_Del           &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &kp SQT
@@ -209,6 +211,7 @@
         };
 
         navigate {
+            display-name = "NAVIGATE";
             bindings = <
 &kp KP_MULTIPLY  &kp MINUS  &ht AMPS N7  &ht ASTRK N8  &ht LPAR N9   &kp PLUS     &kp HOME       &select_all_left  &select_word_previous  &select_word_next  &select_all_right  &kp END
 &kp KP_DIVIDE    &trans     &trans       &trans        &trans        &kp RET      &kp LG(EQUAL)  &kp LEFT          &kp DOWN               &kp UP             &kp RIGHT          &new_line
@@ -218,6 +221,7 @@
         };
 
         numbers {
+            display-name = "NUMBERS";
             bindings = <
 &kp TAB     &bootloader   &trans        &trans        &trans        &trans          &trans          &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DELETE
 &bt BT_CLR  &kp N1        &kp N2        &kp N3        &kp N4        &kp N5          &kp N6          &kp N7     &kp N8     &kp N9            &kp N0             &trans
@@ -227,6 +231,7 @@
         };
 
         symbols {
+            display-name = "SYMBOLS";
             bindings = <
 &kp TAB      &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
 &kp LCTRL    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
@@ -236,6 +241,7 @@
         };
 
         manage {
+            display-name = "MANAGE";
             bindings = <
 &trans      &trans        &trans        &trans        &trans        &bootloader     &trans    &trans    &trans  &trans  &trans  &trans
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &tog WIN  &tog MAC  &trans  &trans  &trans  &trans
@@ -245,6 +251,7 @@
         };
 
         layer_6 {
+            display-name = "L6";
             bindings = <
 &kp KP_MULTIPLY  &kp MINUS  &ht AMPS N7  &ht ASTRK N8  &ht LPAR N9   &kp PLUS     &kp HOME       &select_all_left  &select_word_previous  &select_word_next  &select_all_right  &kp END
 &kp KP_DIVIDE    &kp BSPC   &ht DLLR N4  &ht PRCNT N5  &ht CARET N6  &kp RET      &kp LG(EQUAL)  &kp LEFT          &kp DOWN               &kp UP             &kp RIGHT          &new_line
@@ -253,4 +260,3 @@
             >;
         };
     };
-};
