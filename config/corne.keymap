@@ -155,9 +155,10 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press &kp LALT>,
-                <&kp N0 &kp N2 &kp N4 &kp N7>,
-                <&macro_release &kp LALT>;
+                <&macro_press>,
+                <&kp LALT &kp N0 &kp N2 &kp N4 &kp N7>,
+                <&macro_release>,
+                <&kp LALT>;
 
             label = "divide_sign";
         };
@@ -234,7 +235,7 @@
 &kp TAB               &kp Q                &kp W            &kp F            &kp P              &kp B          &kp J  &kp L               &kp U            &kp Y             &td_colon             &kp ESCAPE
 &Bckspc_Del           &HML LEFT_CONTROL A  &HML LEFT_ALT R  &HML LEFT_GUI S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR LEFT_GUI E  &HMR RIGHT_ALT I  &HMR RIGHT_CONTROL O  &td_quote
 &sk_shift LEFT_SHIFT  &ht LG(Z) Z          &ht LG(X) X      &ht LG(C) C      &ht LG(D) D        &ht LG(V) V    &kp M  &kp H               &kp COMMA        &kp DOT           &kp FSLH              &kp RET
-                                                            &kp LGUI         &kp SPACE          &mo 2          &mo 3  &kp SPACE           &mo 6
+                                                            &kp LGUI         &kp SPACE          &mo 2          &mo 3  &kp SPACE           &mo 5
             >;
 
             // FIXED: Changed &mo NAV to &mo NAVIGATE
@@ -246,7 +247,7 @@
 &kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L               &kp U                 &kp Y             &td_colon        &kp ESC
 &Bckspc_Del           &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &td_quote
 &sk_shift LEFT_SHIFT  &ht LC(Z) Z      &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H               &kp COMMA             &kp DOT           &kp FSLH         &kp RET
-                                                        &kp LCTRL            &kp SPACE          &mo 2          &mo 3  &kp SPACE           &mo 7
+                                                        &kp LCTRL            &kp SPACE          &mo 2          &mo 3  &kp SPACE           &mo 6
             >;
 
             // FIXED: Changed &mo NAV to &mo NAVIGATE
@@ -255,10 +256,10 @@
         numbers {
             display-name = "NUMBERS";
             bindings = <
-&trans  &trans  &trans  &trans    &trans          &trans    &trans        &kp N7  &kp N8   &kp N9  &kp MINUS     &trans
-&trans  &trans  &trans  &trans    &sk LEFT_SHIFT  &trans    &divide_sign  &kp N4  &kp N5   &kp N6  &kp PLUS      &trans
-&trans  &trans  &trans  &trans    &trans          &trans    &kp SLASH     &kp N1  &kp N2   &kp N3  &kp ASTERISK  &trans
-                        &kp LGUI  &kp SPACE       &trans    &trans        &kp N0  &kp DOT
+&trans  &trans  &trans    &trans    &trans          &trans    &trans        &kp N7   &kp N8  &kp N9  &kp MINUS     &trans
+&trans  &trans  &kp LALT  &trans    &sk LEFT_SHIFT  &trans    &divide_sign  &kp N4   &kp N5  &kp N6  &kp PLUS      &trans
+&trans  &trans  &trans    &trans    &trans          &trans    &kp SLASH     &kp N1   &kp N2  &kp N3  &kp ASTERISK  &trans
+                          &kp LGUI  &kp SPACE       &trans    &trans        &kp DOT  &kp N0
             >;
         };
 
@@ -275,31 +276,21 @@
         manage {
             display-name = "MANAGE";
             bindings = <
-&trans       &trans        &trans        &trans        &trans        &bootloader     &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &tog 1  &tog 0  &trans  &trans  &trans  &trans
-&bootloader  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &bootloader
-                                         &trans        &trans        &trans          &trans  &trans  &trans
+&none        &none         &none         &none         &none         &none           &none   &none   &none  &none  &none  &none
+&bt BT_CLR   &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &tog 1  &tog 0  &none  &none  &none  &none
+&bootloader  &none         &none         &none         &none         &none           &none   &none   &none  &none  &none  &bootloader
+                                         &none         &none         &trans          &trans  &none   &none
             >;
 
             // FIXED: Changed &tog WIN to &tog WINDOWS
-        };
-
-        layer_6 {
-            display-name = "L6";
-            bindings = <
-&kp KP_MULTIPLY  &kp MINUS  &ht AMPS N7  &ht ASTRK N8  &ht LPAR N9   &kp PLUS     &kp HOME       &select_all_left  &select_word_previous  &select_word_next  &select_all_right  &kp END
-&kp KP_DIVIDE    &kp BSPC   &ht DLLR N4  &ht PRCNT N5  &ht CARET N6  &kp RET      &kp LG(EQUAL)  &kp LEFT          &kp DOWN               &kp UP             &kp RIGHT          &new_line
-&kp BSLH         &kp N0     &ht EXCL N1  &ht AT N2     &ht HASH N3   &kp DOT      &kp LG(MINUS)  &kp LS(LC(TAB))   &kp PG_DN              &kp PG_UP          &kp LC(TAB)        &insert_new_line
-                                         &kp TILDE     &kp SPACE     &kp LSHFT    &kp SPACE      &kp LG(LS(LEFT))  &trans
-            >;
         };
 
         NAV_MAC {
             display-name = "NAV_MAC";
             bindings = <
 &kp ESCAPE  &kp LG(Z)         &kp LG(X)     &kp LG(C)     &kp LG(V)       &kp LG(D)               &kp PAGE_UP    &kp LG(LEFT)  &kp UP_ARROW  &kp LG(RIGHT)  &kp BACKSPACE  &kp DEL
-&trans      &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &kp LG(LS(NUMBER_2))    &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &trans         &trans
-&trans      &kp LG(A)         &trans        &trans        &trans          &kp LG(LS(NUMBER_4))    &trans         &kp LA(LEFT)  &trans        &kp LA(RIGHT)  &trans         &trans
+&trans      &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &kp LG(LS(NUMBER_2))    &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &trans         &kp LG(EQUAL)
+&trans      &kp LG(A)         &trans        &trans        &trans          &kp LG(LS(NUMBER_4))    &trans         &kp LA(LEFT)  &trans        &kp LA(RIGHT)  &trans         &kp LG(MINUS)
                                             &trans        &trans          &trans                  &trans         &trans        &trans
             >;
         };
@@ -308,29 +299,9 @@
             display-name = "NAV_WIN";
             bindings = <
 &kp ESCAPE  &kp LC(Z)     &kp LC(X)     &kp LC(C)         &kp LC(V)       &kp LC(D)    &kp PAGE_UP    &kp HOME      &kp UP_ARROW  &kp END        &kp BACKSPACE  &kp DEL
-&trans      &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans       &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &trans         &trans
-&trans      &kp LC(A)     &trans        &trans            &trans          &trans       &trans         &kp LC(LEFT)  &trans        &kp LC(RIGHT)  &trans         &trans
+&trans      &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans       &kp PAGE_DOWN  &kp LEFT      &kp DOWN      &kp RIGHT      &trans         &kp RC(EQUAL)
+&trans      &kp LC(A)     &trans        &trans            &trans          &trans       &trans         &kp LC(LEFT)  &trans        &kp LC(RIGHT)  &trans         &kp RC(MINUS)
                                         &trans            &trans          &trans       &trans         &trans        &trans
-            >;
-        };
-
-        symbols_backup {
-            display-name = "SYMB";
-            bindings = <
-&kp TAB      &bootloader  &trans  &kp RG(RS(N4))  &kp LS(RG(N2))  &trans       &trans     &kp UNDERSCORE  &kp PLUS   &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp DELETE
-&kp LCTRL    &kp EXCL     &kp AT  &kp HASH        &kp DLLR        &kp PRCNT    &kp CARET  &kp AMPS        &kp ASTRK  &kp LPAR        &kp RPAR         &kp GRAVE
-&bootloader  &trans       &trans  &trans          &trans          &trans       &kp UNDER  &kp PLUS        &kp LBRC   &kp RBRC        &kp PIPE         &kp TILDE
-                                  &kp LGUI        &kp SPACE       &trans       &trans     &kp ENTER       &kp RALT
-            >;
-        };
-
-        layer_9 {
-            display-name = "NUMB";
-            bindings = <
-&trans  &trans  &trans  &trans    &trans     &trans    &trans          &kp MINUS  &kp EQUAL  &kp LEFT_BRACKET  &kp RIGHT_BRACKET  &kp DELETE
-&trans  &kp N1  &kp N2  &kp N3    &kp N4     &kp N5    &kp N6          &kp N7     &kp N8     &kp N9            &kp N0             &trans
-&trans  &trans  &trans  &trans    &trans     &trans    &kp LEFT_ARROW  &kp DOWN   &kp UP     &kp RIGHT         &trans             &bootloader
-                        &kp LGUI  &kp SPACE  &trans    &trans          &kp ENTER  &kp RALT
             >;
         };
     };
