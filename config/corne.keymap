@@ -151,15 +151,15 @@
             label = "NEW_LINE";
         };
 
-        divide_sign: new_macro {
+        divide_sign: divide_sign {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings =
-                <&macro_press>,
+                <&macro_press &kp LALT>,
                 <&kp N0 &kp N2 &kp N4 &kp N7>,
-                <&macro_release>;
+                <&macro_release &kp LALT>;
 
-            label = "NEW_MACRO";
+            label = "divide_sign";
         };
     };
 
