@@ -99,58 +99,18 @@
             #binding-cells = <0>;
             bindings = <&kp SQT>, <&kp LS(SQT)>;
         };
+
+        ctrl_q_to_alt_F4: ctrl_q_to_alt_F4 {
+            compatible = "zmk,behavior-mod-morph";
+            label = "CTRL_Q_TO_ALT_F4";
+            bindings = <&kp Q>, <&kp LA(F4)>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
     };
 
     macros {
-        select_word_previous: select_word_previous {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LS(LEFT_ARROW))>;
-            label = "SELECT_WORD_PREVIOUS";
-        };
-
-        select_word_next: select_word_next {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LA(RIGHT_ARROW))>;
-            label = "SELECT_WORD_NEXT";
-        };
-
-        select_all_left: select_all_left {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(HOME)>;
-            label = "SELECT_ALL_LEFT";
-        };
-
-        select_all_right: select_all_right {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LS(END)>;
-            label = "SELECT_ALL_RIGHT";
-        };
-
-        select_line: select_line {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp HOME &select_all_right>;
-            label = "SELECT_LINE";
-        };
-
-        insert_new_line: insert_new_line {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp UP_ARROW &new_line>;
-            label = "INSERT_NEW_LINE";
-        };
-
-        new_line: new_line {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp END &kp ENTER>;
-            label = "NEW_LINE";
-        };
-
         divide_sign: divide_sign {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -256,10 +216,10 @@
         windows {
             display-name = "WINDOWS";
             bindings = <
-&kp TAB               &kp Q            &kp W            &kp F                &kp P              &kp B          &kp J  &kp L               &kp U                 &kp Y             &td_colon        &kp ESC
-&Bckspc_Del           &HML LEFT_GUI A  &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &td_quote
-&sk_shift LEFT_SHIFT  &ht LC(Z) Z      &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H               &kp COMMA             &kp DOT           &kp FSLH         &kp RET
-                                                        &kp LCTRL            &kp SPACE          &mo 2          &mo 3  &kp SPACE           &mo 6
+&kp TAB               &ctrl_q_to_alt_F4  &ht F4 W         &kp F                &kp P              &kp B          &kp J  &kp L               &kp U                 &kp Y             &td_colon        &kp ESC
+&Bckspc_Del           &HML LEFT_GUI A    &HML LEFT_ALT R  &HML LEFT_CONTROL S  &HML LEFT_SHIFT T  &kp G          &kp K  &HMR RIGHT_SHIFT N  &HMR RIGHT_CONTROL E  &HMR RIGHT_ALT I  &HMR LEFT_GUI O  &td_quote
+&sk_shift LEFT_SHIFT  &ht LC(Z) Z        &ht LC(X) X      &ht LC(C) C          &ht LC(D) D        &ht LC(V) V    &kp M  &kp H               &kp COMMA             &kp DOT           &kp FSLH         &kp RET
+                                                          &kp LCTRL            &kp SPACE          &mo 2          &mo 3  &kp SPACE           &mo 6
             >;
 
             // FIXED: Changed &mo NAV to &mo NAVIGATE
